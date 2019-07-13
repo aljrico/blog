@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<h1>
+  {{ page.title }}
+</h1>
+
+{% if page.image and page.showimage == "true" %}
+  <img src="{{ '/assets/img/thumbnails/' | prepend: site.baseurl | replace: 'http://', 'https://' }}{{ page.image }}">
+{% endif %}
+
+{{ content }}
+
+<span class="post-date">
+  {{ site.data.settings.post_date_prefix }}
+  <!-- Date -->
+  {{ page.date | date_to_string }}
+  <!-- Modified date -->
+  {% if page.mod_date %}
+   (updated on {{ page.mod_date | date_to_string }})
+  {% endif %}
+  <!-- Author -->
+  by
+  {% if page.author %}
+    {{ page.author }}
+  {% else %}
+    {{ site.author }}
+  {% endif %}
+</span>
+
+{% include social-sharing.html %}
+
+{% include related-posts.html %}
+
+{% if site.data.settings.disqus.comments %}
+  {% include disqus.html %}
+{% endif %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ '/assets/js/lightbox.js' | prepend: site.baseurl | replace: 'http://', 'https://' }}"></script>

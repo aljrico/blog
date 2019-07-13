@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+
+{% include head.html %}
+
+<body>
+  <header class="page-header">
+    {% include header.html %}
+  </header>
+
+  <div class="container">
+    <div class="post-container">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+  </div>
+
+  <script id="dsq-count-scr" src="//aldomannblog.disqus.com/count.js" async></script>
+
+</body>
+</html>

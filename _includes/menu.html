@@ -1,0 +1,11 @@
+<div class="menu">
+	<nav class="menu-content">
+		{% for item in site.data.header.menu %}
+			{% if item.hardlink == true %}
+				<a href="{{item.url}}">{{ item.name }}</a>
+			{% else %}
+				<a href="{{ site.baseurl }}/{{ item.path }}/{{ item.url }}">{{ item.name }}</a>
+		{% endif %}
+		{% endfor %}
+	</nav>
+</div>

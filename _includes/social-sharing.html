@@ -1,0 +1,14 @@
+<div class="post-date">{{ site.data.settings.sharing_button_prompt }}</div>
+
+  <div id="share">
+    {% assign share_url = page.url | absolute_url | cgi_escape %}
+    {% for item in site.data.sharing.social %}
+      {% unless item.type == "fas" %}
+        <a class="{{ item.icon }}" href="{{ item.base_link }}{{ item.url_link }}{{ share_url }}{{ item.text_link }}{{ page.title }}{{ item.src_link }}" target="_blank"><i class="fab fa-{{ item.icon }}" ></i></a>
+      {% else %}
+        <a class="{{ item.icon }}" href="{{ item.link }}" target="_blank"><i class="fas fa-{{ item.icon }}" ></i></a>
+      {% endunless %}
+    {% endfor %}
+  </div>
+
+</div>

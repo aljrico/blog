@@ -1,0 +1,46 @@
+sharing_message: "Check this out!"
+
+social:
+- {
+  icon: 'twitter',
+  base_link: 'https://twitter.com/intent/tweet',
+  url_link: '?url=',
+  text_link: '&text=',
+  src_link: '&via=aldomann'
+}
+# - {
+#   icon: 'google-plus',
+#   base_link: 'https://plus.google.com/share',
+#   url_link: '?url=',
+#   text_link: '&text='
+# }
+- {
+  icon: 'reddit-alien',
+  base_link: 'https://www.reddit.com/submit',
+  url_link: '?url=',
+  text_link: '&title='
+}
+- {
+  icon: 'telegram',
+  base_link: 'https://telegram.me/share/url',
+  url_link: '?url=',
+  text_link: '&text='
+}
+- {
+  icon: 'linkedin',
+  base_link: 'https://www.linkedin.com/shareArticle?mini=true',
+  url_link: '&url=',
+  text_link: '&title='
+}
+# - {
+#   icon: 'pinterest',
+#   base_link: 'https://pinterest.com/pin/create/bookmarklet/?is_video=false',
+#   url_link: '&url=',
+#   text_link: '&description='
+# }
+# - {
+#   icon: 'envelope',  type: 'fas',
+#   base_link: 'mailto:',
+#   url_link: '?body=',
+#   text_link: '&subject='
+# }

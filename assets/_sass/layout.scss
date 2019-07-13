@@ -1,0 +1,81 @@
+/*
+	Contents:
+		Masthead
+		Pagination
+*/
+
+/*
+	Masthead
+*/
+
+.masthead {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	margin-bottom: 4rem;
+	font-family: "Quattrocento Sans", sans-serif;
+}
+
+.masthead a:hover {
+	color: $black;
+}
+
+.masthead-title a {
+	font-size: 2rem;
+	text-decoration: none;
+	color: $blacker;
+}
+
+.masthead-subtitle {
+	padding-left: 0.5rem;
+	color: $blackish;
+}
+
+/*
+	Pagination
+*/
+
+.pagination {
+	overflow: hidden;
+	font-family: 'Quattrocento Sans', sans-serif;
+	text-align: center;
+}
+
+.pagination a {
+	text-decoration: none;
+}
+
+.pagination-button {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #999;
+	border: 1px solid #e0e0e0;
+	padding: 10px 20px;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.pagination-active {
+	color: $blacker;
+}
+
+.pagination-active:hover {
+	background-color: #e0e0e0;
+}
+
+@media (max-width: 30rem) {
+	.pagination-button {
+		padding: 10px 15px;
+		font-size: 0.9rem;
+	}
+}
+
+
+/*
+	404 Error Page
+*/
+
+object.error {
+	max-width: 70%;
+}

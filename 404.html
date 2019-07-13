@@ -1,0 +1,17 @@
+---
+layout: default
+title: "404: Page not found"
+permalink: 404.html
+---
+
+<div class="page">
+	<h1 class="page-title">404: Page not found</h1>
+
+	<p align="center">
+		<object class="error" type="image/svg+xml" data="{{ '/assets/images/404.svg' | prepend: site.baseurl | replace: 'http://', 'https://' }}">
+		  Your browser does not support SVG
+		</object>
+	</p>
+
+	<p class="lead">Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. <a href="{{ site.baseurl }}/">Head back home</a> to try finding it again, or search for it on the <a href="{{ site.baseurl }}/tags">archives page</a>.</p>
+</div>

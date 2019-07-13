@@ -1,0 +1,109 @@
+// Shraring buttons
+
+/* container */
+
+#share {
+	width: 100%;
+  	margin: 0 auto;
+  	text-align: center;
+  	.fa, .fas, .fab {
+  		color: #fff;
+  		font-size: 20px;
+  		padding: 20px 0;
+  	}
+}
+
+/* buttons */
+
+#share a {
+	width: 40px;
+  	height: 40px;
+  	display: inline-block;
+  	margin: 5px;
+  	border-radius: 50%;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+/* colors */
+
+.envelope {
+	background: #f39c12;
+}
+
+.twitter {
+	background: #1da1f2;
+}
+
+.telegram {
+	background: #42aae3;
+}
+
+.mastodon {
+	background: #2b90d9;
+}
+
+.reddit-alien {
+	background: #ff4500;
+}
+
+.instagram {
+	background: #375989;
+}
+
+.github {
+	background: #333;
+}
+
+.gitlab {
+	background: #fca326;
+}
+
+.ubuntu {
+	background: #dd4814;
+}
+
+.linkedin {
+	background: #0073a4;
+}
+
+.facebook {
+	background: #3d5b99;
+}
+
+.google-plus {
+	background: #e64a41;
+}
+
+.pinterest {
+	background: #bd081c;
+}
+
+.medium {
+	background: #00AB6C;
+}
+
+.deviantart {
+	background: #4dc47d;
+}
+
+.codepen {
+	background: black;
+}
+
+.rss-square {
+	background: #ff6600;
+}
+
