@@ -6,7 +6,7 @@ social:
   base_link: 'https://twitter.com/intent/tweet',
   url_link: '?url=',
   text_link: '&text=',
-  src_link: '&via=aldomann'
+  src_link: '&via=aljrico'
 }
 # - {
 #   icon: 'google-plus',

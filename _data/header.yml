@@ -7,10 +7,10 @@
 
 # Page settings
 about_avatar:               "true"
-about_name:                 "Alfredo Hernández"
-about_title:                "aldomann's Blog"
-about_subtitle:             "Stuff and whatnot"
-about_contact_email:        "aldomann.designs@gmail.com"
+about_name:                 "Alejandro Jiménez Rico"
+about_title:                "alejandro's Blog"
+about_subtitle:             "Overly detailed explanations"
+about_contact_email:        "aljrico@gmail.com"
 
 menu:
 # - {name: 'About Me',     hardlink: true,   url: 'https://aldomann.com'}

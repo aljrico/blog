@@ -1,12 +1,12 @@
 # Change to true for Disqus comments
 disqus:
   comments: true
-  disqus_shortname: 'aldomannblog'
+  disqus_shortname: 'aljrico'
 
 # google-ID: 'UA-112060364-1'
 
 menu:
-- {name: 'About Me',     hardlink: true,   url: 'https://aldomann.com'}
+- {name: 'About Me',     hardlink: true,   url: 'https://aljrico.github.io'}
 - {name: 'Tech Stuff',   path: 'menu',     url: 'tech'}
 - {name: 'Data Science', path: 'menu',     url: 'data-science'}
 - {name: 'Design',       path: 'menu',     url: 'design'}
