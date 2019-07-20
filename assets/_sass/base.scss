@@ -44,13 +44,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	text-decoration: underline;
+	text-decoration: none;
 	color: $blacker;
 }
 
 a:hover {
-	color: $black;
-	border-bottom: none;
+  color: #4a6978;
 }
 
 img {
