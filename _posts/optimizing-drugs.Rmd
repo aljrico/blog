@@ -1,0 +1,106 @@
+---
+output:
+  md_document: default
+  html_document: default
+---
+---
+layout: post
+title: Optimizing drugs distribution in a developing country
+categories:
+- blog
+output:
+  md_document:
+    variant: markdown_github
+
+
+In this post I will try exemplify how **Data Science** can be of great help when trying to address real-world problems. Today we'll optimize drugs distribution of some uknown place, just looking at the raw data provided by the medical services in place.
+
+Even though we are not trying to usurpe the role of Physicians in their field, we'll try to show how useful can be the application of Data Science techniques in order to *cooperate* with Medical Services. Especially in scenarios of scarcity or emergency, where medical specialists are having a hard time dealing with huge loads of people in need of their help. In this extreme situations, decision-making processes are more critical than ever.
+
+---
+
+
+For this exercice, we'll have three different .csv files with medical records and patients information. Disorganized, untidy, messy and imperfect. As it always is.
+
+All three datasets stand for different kind of information about patients:
+
+- *Situation*, where we have a record of their diagnosed condition and treatment.
+- *Demographics*, where we can study the demographic information about the patient.
+- *Condition*, where there is a record of previous conditions.
+
+With this three files, we should be able to construct a Machine Learning algorithm that manages to recommend drugs to patients.
+
+
+# Tidying Data
+
+First of all, let's grab all data we can put our hands on, and get a good look at them.
+
+
+```{r message = FALSE}
+library(data.table)
+library(tidyverse)
+
+sit <- as.data.frame(fread('dataset1.csv'))
+dem <- as.data.frame(fread('dataset2.csv'))
+con <- as.data.frame(fread('dataset3.csv'))
+
+glimpse(sit)
+glimpse(dem)
+glimpse(con)
+```
+
+First of all, we will start putting some order in these datasets.
+
+All three files have the same variable in common, which is the *Patient ID*. But, weirdly enough, it is named differently in one of the files.  Let's fix that:
+
+```{r message = FALSE}
+colnames(sit)[3] <- "Patient_ID"
+sit
+```
+
+
+## Checking for errors
+
+The first thing we should take care of is the uniqueness of the records. Or, in other words, whether we can rely on the *Patient ID* in order to uniquely identify patients.
+
+```{r message = FALSE}
+all(unique(sit[,'Patient_ID']) %in% unique(con[,'Patient_ID']))
+all(unique(con[,'Patient_ID']) %in% unique(sit[,'Patient_ID']))
+all(unique(sit[,'Patient_ID']) %in% unique(dem[,'Patient_ID']))
+all(unique(con[,'Patient_ID']) %in% unique(dem[,'Patient_ID']))
+```
+
+Here we have a bit of a mess about the completition of the IDs. All patients appear in the *Demographics* file, but not all of them appear in the other two. 
+
+Now let's check for duplicates. An ID appearing more than once shouldn't be a problem in the *Situation* or *Condition* files. A person could have been sick or treated more than once. The only error in these files that we could spot are people who are registered to die more than once.
+
+```{r message = FALSE}
+sit %>% 
+	filter(Survived_1_year ==0) %>% 
+	group_by(Patient_ID) %>% 
+	filter(n()>1) %>% 
+	arrange(Patient_ID)
+
+any(duplicated(sit))
+any(duplicated(con))
+any(duplicated(dem))
+```
+
+Filtering the *Situation* records this way we can highlight patients whose death appears more than once. Oddly as it may seem, this could be correct. The records of this file seem to stand for the diagnosis, treatment and outomce. So any patient with more than one diagnosis that didn't survive after a year would appear in these records with more than one death. Since we can not say this is an error, we will assume that is correct.
+
+Aknowledging that there are no duplicates whatsoever, we shoud check for missing values before we move on.
+
+```{r message=FALSE}
+any(is.na(sit))
+any(is.na(con))
+any(is.na(dem))
+```
+
+## Arranging data
+
+In some files we have some variables whose values are quire odd. For example the *Previous Condition* variable. If we want to construct a model that has one unique outcom for each unique ID, we need to build a dataframe with that uniqueness in its records, and so we aim to compress all data in a way that each row is for a single unique patient, and each patient has a single unique row for them.
+
+```{r message = FALSE}
+con %>% 
+	mutate()
+```
