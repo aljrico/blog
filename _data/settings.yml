@@ -15,11 +15,10 @@ menu:
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
 # - {icon: 'google-plus', link: 'https://plus.google.com/u/0/+AlfredoHernándezC'}
-- {icon: 'twitter', link: 'https://twitter.com/aldomann'}
-- {icon: 'gitlab', link: 'https://www.gitlab.com/aldomann'}
-- {icon: 'github', link: 'https://www.github.com/aldomann'}
-- {icon: 'linkedin', link: 'http://www.linkedin.com/in/aldomann'}
-- {icon: 'telegram', link: 'https://telegram.me/aldomann'}
+- {icon: 'twitter', link: 'https://twitter.com/aljrico'}
+- {icon: 'github', link: 'https://www.github.com/aljrico'}
+- {icon: 'linkedin', link: 'http://www.linkedin.com/in/aljrico'}
+- {icon: 'telegram', link: 'https://telegram.me/aljrico'}
 # - {icon: 'envelope', link: 'mailto:aldomann.designs@gmail.com'}
 - {icon: 'rss-square', link: 'feed.xml'}
 # - {icon: 'rss-square', link: 'rss-feed.xml'}
