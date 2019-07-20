@@ -17,7 +17,7 @@ menu:
 # - {name: 'About Me',     hardlink: true,   url: 'https://aljrico.github.io'}
 # - {name: 'Tech Stuff',   path: 'menu',     url: 'tech'}
 - {name: 'Home',   hardlink: true,   url: 'https://aljrico.github.io'}
-- {name: 'Blog',     url: 'blog'}
+- {name: 'Blog'}
 - {name: 'CV',   hardlink: true,   url: 'https://github.com/aljrico/aljrico.github.io/raw/master/AlejandroJimenezRico_CV.pdf'}
 # - {name: 'Tags',         path: '..',       url: 'tags'}
 
