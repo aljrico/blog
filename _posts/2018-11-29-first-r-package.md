@@ -6,7 +6,7 @@ categories:
 comments: True
 ---
 
-<left><img src="https://raw.githubusercontent.com/aljrico/harrypotter/blob/master/man/figures/logo.png" width="350"></left>
+<left><img src="https://raw.githubusercontent.com/aljrico/harrypotter/master/man/figures/logo.png" width="350"></left>
 
 
 [![cran version](http://www.r-pkg.org/badges/version/harrypotter)](https://cran.r-project.org/package=harrypotter)
