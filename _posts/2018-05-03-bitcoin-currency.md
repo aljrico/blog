@@ -55,7 +55,7 @@ Considering all of the above, you might be wondering whether some new shiny toke
 
 Over the past couple of years, we have witnessed an outstandingly sharp increase cryptocurrencies price, but especially in bitcoin's. This has sparkled a bunch of discussion upon whether it is a bubble or not, and on its real value.
 
-![](https://github.com/aljrico/aljrico.github.io/blob/master/_posts/images/btc-hist-price.png?raw=true)
+![](https://github.com/aljrico/blog/blob/master/_posts/images/btc-hist-price.png?raw=true)
 
 Unlike most stocks, bitcoin is uncapable of provide returns. It is not uncapable because it is not working properly, it is not because it was never inteded to produce any kind of profit, it was inteded to become *a currency*. And no currency byproducts profits by itself.
 
@@ -89,7 +89,7 @@ This puts bitcoin in an awesome situation, doesn't it?
 
 The truth is that printing money is not the only way to destabilize the value of a currency. Volatility does it too.
 
-![](https://github.com/aljrico/aljrico.github.io/blob/master/_posts/images/vol-currencies.png?raw=true)
+![](https://github.com/aljrico/blog/blob/master/_posts/images/vol-currencies.png?raw=true)
 
 In this plot you can see the computed moving volatility of Bitcoin and some standard currencies. It is computed taking a range of 112 days. If you want more details, you can see the code of this calculations in [my github page](https://github.com/aljrico/bitcoin).
 

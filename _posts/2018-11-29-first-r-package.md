@@ -6,7 +6,7 @@ categories:
 comments: True
 ---
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/hogwarts_shield.png" width="350"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/hogwarts_shield.png" width="350"></center>
 
 
 [![cran version](http://www.r-pkg.org/badges/version/harrypotter)](https://cran.r-project.org/package=harrypotter)
@@ -27,9 +27,9 @@ The colour palette should be beautiful, useful for plotting data and shoulr rela
 
 > Most of us need to _listen_ to the music to understand how beautiful it is. But often that’s how statistics are presented: we show the notes instead of playing the music.
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/hogwarts-houses.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/hogwarts-houses.png"></center>
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/show_scales2-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/show_scales2-1.png" ></center>
 
 
 
@@ -64,7 +64,7 @@ pal <- hp(25, house = "Gryffindor")
 image(volcano, col = pal)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-3-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-3-1.png" ></center>
 
 Or a bit more like me, you prefer to be a **Ravenclaw**.
 
@@ -74,7 +74,7 @@ pal <- hp(25, house = "Ravenclaw")
 image(volcano, col = pal)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-4-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-4-1.png" ></center>
 
 Or put them all together
 
@@ -92,7 +92,7 @@ image(volcano, col = pal_huff)
 image(volcano, col = pal_sly)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-5-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-5-1.png" ></center>
 
 ### ggplot2
 
@@ -112,7 +112,7 @@ ggplot(data.frame(x = rnorm(1e4), y = rnorm(1e4)), aes(x = x, y = y)) +
 	theme_bw()
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-6-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-6-1.png" ></center>
 
 and **Ravenclaw**
 
@@ -126,19 +126,19 @@ ggplot(data.frame(x = rnorm(1e4), y = rnorm(1e4)), aes(x = x, y = y)) +
 	theme_bw()
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-7-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-7-1.png" ></center>
 
 
 or more made-up heatmaps
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-8-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-8-1.png" ></center>
 
 
 Using the same function we can also plot these cloropleth maps of U.S. unemployment:
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/ggplot2-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/ggplot2-1.png" ></center>
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/ggplot2-2.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/ggplot2-2.png" ></center>
 
 
 
@@ -152,7 +152,7 @@ ggplot(mtcars, aes(factor(cyl), fill=factor(vs))) +
   scale_fill_hp(discrete = TRUE, house = "Ravenclaw")
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-9-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-9-1.png" ></center>
 
 
 ```r
@@ -165,7 +165,7 @@ ggplot(mpg, aes(class)) +
 	xlab("Class")
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-10-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-10-1.png" ></center>
 
 
 
@@ -179,5 +179,5 @@ filled.contour(cos(r^2)*exp(-r/(2*pi)),
                asp=1)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/aljrico.github.io/master/_posts/images/unnamed-chunk-11-1.png" ></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/unnamed-chunk-11-1.png" ></center>
 
