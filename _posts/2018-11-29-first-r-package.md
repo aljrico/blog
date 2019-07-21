@@ -6,7 +6,7 @@ categories:
 comments: True
 ---
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/hogwarts_shield.png" width="350"></center>
+<left><img src="https://raw.githubusercontent.com/aljrico/harrypotter/blob/master/man/figures/logo.png" width="350"></left>
 
 
 [![cran version](http://www.r-pkg.org/badges/version/harrypotter)](https://cran.r-project.org/package=harrypotter)
