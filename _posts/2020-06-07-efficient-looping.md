@@ -232,7 +232,8 @@ beforehand:
 ``` r
 efficient_way <- function(dt, n) {
   dat <- data.table::copy(dt)
-  if(n > 1024) alloc.col(dat, 2^16) # If we know we are going to reference a large number of columns, we should define them beforehand
+  # If we know we are going to reference a large number of columns, we should allocate memory for them
+  if(n > 1024) alloc.col(dat, 2^16) 
     for (j in 3:n) {
       new_column <- paste0("column_", j)
       old_column_1 <- paste0("column_", j - 1)
