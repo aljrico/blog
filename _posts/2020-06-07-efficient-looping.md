@@ -1,9 +1,3 @@
-``` r
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
-```
-
-R loops are not slow
---------------------
 
 I’d bet most R developers have - or will have - faced the issue of
 having to optimise a big piece of code. Some processes might take way
@@ -23,6 +17,9 @@ create columns blazingly fast in a loop. We are going to make use of
 `data.table`, as it’s usual when we want to optimise R code, and its
 fantastic [modification by
 reference](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-reference-semantics.html).
+
+R loops are not slow
+--------------------
 
 Firstly, whw do we make R loops faster? Well, a widespread misconception
 about R programming is that loops are inherently slow. The actual loop
@@ -73,7 +70,7 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-1-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/file_1.png"></center>
 
 Different looping methods
 -------------------------
@@ -178,7 +175,7 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-3-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/file_2.png"></center>
 
 
 Preventive column memory allocation
@@ -242,5 +239,5 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-6-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/file_3.png"></center>
 

@@ -32,20 +32,17 @@ actually as fast as what you can achieve with the `apply()` family:
 
 ``` r
 library(bench)
-library(ggplot2)
+library(plotly)
 library(dplyr)
 
 plot_results <- function(results) {
-  results %>%
-    select(expression, median, n) %>%
-    mutate(expression = as.character(expression)) %>%
-    ggplot(aes(x = n, y = as.numeric(median), colour = expression)) +
-    geom_point(size = 2.5) +
-    geom_line(size = 1) +
-    scale_x_log10() +
-    xlab("N") +
-    ylab("Time (seconds)") +
-    theme_bw()
+results %>%
+  select(expression, median, n) %>%
+  mutate(expression = as.character(expression)) %>%
+  plot_ly(colors = c("#1f2430", "#4CCFE6", "#FFCC66", "#F07171", "#FF9940")) %>% 
+  add_trace(x = ~n, y = ~median, color = ~expression, type = "scatter", mode = "lines+markers") %>% 
+  layout(xaxis = list(type = "log", title = "Size", gridcolor = "#fafafa"),
+         yaxis = list(type = "log", title = "Time (seconds)", gridcolor = "#fafafa"))
 }
 
 for_loop <- function(n) {
@@ -70,10 +67,10 @@ results <- bench::press(
   }
 )
 
-plot_results(results)
+plot_results(results) %>% export("efficient_looping/file_1.png")
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-1-1.png"></center>
+![](efficient_looping_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 Different looping methods
 -------------------------
@@ -175,11 +172,10 @@ results <- bench::press(
   }
 )
 
-plot_results(results)
+plot_results(results) %>% export("efficient_looping/file_2.png")
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-3-1.png"></center>
-
+![](efficient_looping_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 Preventive column memory allocation
 -----------------------------------
@@ -239,8 +235,7 @@ results <- bench::press(
   }
 )
 
-plot_results(results)
+plot_results(results) %>% export("efficient_looping/file_3.png")
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-6-1.png"></center>
-
+![](efficient_looping_files/figure-markdown_github/unnamed-chunk-6-1.png)
