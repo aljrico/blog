@@ -38,9 +38,10 @@ actually as fast as what you can achieve with the `apply()` family:
 
 ``` r
 library(bench)
-library(ggplot2)
+library(plotly)
 library(dplyr)
 
+# Function to quickly visualise the results of the performance analysis. We'll be using this function across this article
 plot_results <- function(results) {
   results %>%
     select(expression, median, n) %>%
@@ -54,18 +55,21 @@ plot_results <- function(results) {
     )
 }
 
+# Iterating over a vector using a vanilla 'for' loop
 for_loop <- function(n) {
   v <- c(1:n)
   for (i in 1:n) v[i] <- i * i
   return(v)
 }
 
+# Same iteration using the 'apply' function
 apply_loop <- function(n) {
   v <- c(1:n)
   v <- sapply(v, function(i) i * i)
   return(v)
 }
 
+# Meaure performance of both approaches
 results <- bench::press(
   n = 2^(1:15),
   {
@@ -76,6 +80,7 @@ results <- bench::press(
   }
 )
 
+# See results
 plot_results(results)
 ```
 
@@ -108,6 +113,7 @@ dt <-
     column_2 = sample(1:10, size = 500, replace = TRUE)
   )
 
+# Convert to data.frame
 df <- as.data.frame(dt)
 
 # Base R way
@@ -136,8 +142,11 @@ dt <-
     column_1 = sample(100:1000, size = 500, replace = TRUE),
     column_2 = sample(1:10, size = 500, replace = TRUE)
   )
+
+# Convert to data.frame
 df <- as.data.frame(dt)
 
+# Create new columns using simple base R technique
 base_r_way <- function(df, n) {
   for (j in 3:n) {
     new_column <- paste0("column_", j)
@@ -149,6 +158,7 @@ base_r_way <- function(df, n) {
   return(df)
 }
 
+# Create new columns using the usual 'dplyr' approach
 dplyr_way <- function(df, n) {
   for (j in 3:n) {
     new_column <- paste0("column_", j)
@@ -159,6 +169,7 @@ dplyr_way <- function(df, n) {
   return(df)
 }
 
+# Create new columns by reference using `set()` and data.table
 efficient_way <- function(dt, n) {
   dat <- data.table::copy(dt)
   for (j in 3:n) {
@@ -170,6 +181,7 @@ efficient_way <- function(dt, n) {
   return(as.data.frame(dat))
 }
 
+# Evaluate performance
 results <- bench::press(
   n = 2^(2:6),
   {
@@ -196,6 +208,7 @@ using *dplyr* is blowing up, we’ll only incrase the size of the
 experiment using the other two, so we can compare them:
 
 ``` r
+# This chunk will throw an error, because `efficient_way()` is referencing more columns than they exist
 results <- bench::press(
   n = 2 ^ (2 : 15),
   {
@@ -218,14 +231,14 @@ beforehand:
 
 ``` r
 efficient_way <- function(dt, n) {
-dat <- data.table::copy(dt)
-if(n > 1024) alloc.col(dat, 2^16)
-  for (j in 3:n) {
-    new_column <- paste0("column_", j)
-    old_column_1 <- paste0("column_", j - 1)
-    old_column_2 <- paste0("column_", j - 2)
-    set(dat, j = new_column, value = dat[[old_column_1]] * dat[[old_column_2]])
-  }
+  dat <- data.table::copy(dt)
+  if(n > 1024) alloc.col(dat, 2^16) # If we know we are going to reference a large number of columns, we should define them beforehand
+    for (j in 3:n) {
+      new_column <- paste0("column_", j)
+      old_column_1 <- paste0("column_", j - 1)
+      old_column_2 <- paste0("column_", j - 2)
+      set(dat, j = new_column, value = dat[[old_column_1]] * dat[[old_column_2]])
+    }
   return(as.data.frame(dat))
 }
 ```
