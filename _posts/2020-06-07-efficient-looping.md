@@ -26,6 +26,8 @@ create columns blazingly fast in a loop. We are going to make use of
 fantastic [modification by
 reference](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-reference-semantics.html).
 
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/images/column.jpg"></center>
+
 R loops are not slow
 --------------------
 
