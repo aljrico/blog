@@ -98,8 +98,7 @@ non-linearly with the size of your data.frame.
 
 The magic of using `data.table` is that you will be able to only access
 the actual piece of memory that contains only what you are looking for.
-And we do that using the `set()` function. And how does that work? Well,
-let’s do a simple operation of columns. We are going to simply create a
+And we do that using the `set()` function. To ilustrate how to use it, we are going to do a simple operation of columns, simply create a
 `column_3` that will be the result of multiplying `column_1` and
 `column_2`:
 
@@ -132,8 +131,10 @@ set(dt, j = "column_3", value = dt$column_2 * dt$column_1)
 You specify the column name you’re referring to by their name in a
 string, using the `j` parameter. And then you input the desired value in
 the `value` parameter. Note that the `set()` function can be more
-verbose and definitely less clear, but whas you lose in readibility you
-gain it on efficiency, so let’s measure that:
+verbose and definitely less clear, but bear with me because what you lose in readibility you
+gain it on efficiency. 
+
+Now let's imagine that you need to iterate that process. That would mean you want to create a `j` column that is the result of multiplying the columns `j-1` and `j-2`, where `j` can be a very big number.
 
 ``` r
 # Create dummy data.table
