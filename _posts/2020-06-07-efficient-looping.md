@@ -73,7 +73,7 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-1-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-1-1.png"></center>
 
 Different looping methods
 -------------------------
@@ -178,7 +178,7 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-3-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-3-1.png"></center>
 
 
 Preventive column memory allocation
@@ -242,5 +242,5 @@ results <- bench::press(
 plot_results(results)
 ```
 
-<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/efficient_looping_files/figure-markdown_github/unnamed-chunk-6-1.png"></center>
+<center><img src="https://raw.githubusercontent.com/aljrico/blog/master/_posts/rmarkdown/efficient_looping_files/figure-markdown_github/unnamed-chunk-6-1.png"></center>
 
