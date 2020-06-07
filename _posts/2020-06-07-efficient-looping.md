@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Efficient Column Looping with R"
