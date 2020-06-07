@@ -33,7 +33,10 @@ results %>%
   select(expression, median, n) %>%
   mutate(expression = as.character(expression)) %>%
   plot_ly(colors = c("#1f2430", "#4CCFE6", "#FFCC66", "#F07171", "#FF9940")) %>% 
-  add_trace(x = ~n, y = ~median, color = ~expression, type = "scatter", mode = "lines+markers") %>% 
+  add_trace(x = ~n, y = ~median, color = ~expression, 
+            type = "scatter", mode = "lines+markers",
+            line = list(width = 4),
+            marker = list(size = 10)) %>% 
   layout(xaxis = list(type = "log", title = "Size", gridcolor = "#fafafa"),
          yaxis = list(type = "log", title = "Time (seconds)", gridcolor = "#fafafa"),
          font = list(size = 14))
