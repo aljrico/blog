@@ -36,13 +36,12 @@ plot_results <- function(results) {
   results %>%
     select(expression, median, n) %>%
     mutate(expression = as.character(expression)) %>%
-    ggplot(aes(x = n, y = as.numeric(median), colour = expression)) +
-    geom_point(size = 2.5) +
-    geom_line(size = 1) +
-    scale_x_log10() +
-    xlab("N") +
-    ylab("Time (seconds)") +
-    theme_bw()
+    plot_ly(colors = c("#1f2430", "#4CCFE6", "#FFCC66", "#F07171", "#FF9940")) %>%
+    add_trace(x = ~n, y = ~median, color = ~expression, type = "scatter", mode = "lines+markers") %>%
+    layout(
+      xaxis = list(type = "log", title = "Size", gridcolor = "#fafafa"),
+      yaxis = list(type = "log", title = "Time (seconds)", gridcolor = "#fafafa")
+    )
 }
 
 for_loop <- function(n) {
