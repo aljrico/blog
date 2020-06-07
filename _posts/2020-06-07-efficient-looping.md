@@ -1,4 +1,12 @@
 
+---
+layout: post
+title: "Efficient Column Looping with R"
+categories:
+- blog
+comments: True
+---
+
 I’d bet most R developers have - or will have - faced the issue of
 having to optimise a big piece of code. Some processes might take way
 too much time, or they are filling memory space until the session
@@ -40,7 +48,8 @@ plot_results <- function(results) {
     add_trace(x = ~n, y = ~median, color = ~expression, type = "scatter", mode = "lines+markers") %>%
     layout(
       xaxis = list(type = "log", title = "Size", gridcolor = "#fafafa"),
-      yaxis = list(type = "log", title = "Time (seconds)", gridcolor = "#fafafa")
+      yaxis = list(type = "log", title = "Time (seconds)", gridcolor = "#fafafa"),
+      font = list(size = 13)
     )
 }
 
